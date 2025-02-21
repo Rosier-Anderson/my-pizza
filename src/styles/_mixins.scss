@@ -1,0 +1,24 @@
+// src/styles/_mixins.scss
+
+// Define Flex mixin
+@mixin Flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  // Define Font mixin with 4 params 
+  @mixin Font($family: null, $size: null, $weight: null, $style: null) {
+    @if $family != null {
+      font-family: $family;
+    }
+    @if $size != null {
+      font-size: $size;
+    }
+    @if $weight != null {
+      font-weight: $weight;
+    }
+    @if $style != null {
+      font-style: $style;
+    }
+  }

@@ -1,0 +1,99 @@
+$bg-img: "../assets/pizza.jpeg";
+@use "./mixins" as *;
+
+$color-white: #fff;
+$color-blck: #000;
+
+.home {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  object-fit: contain;
+
+  background: {
+    image: url(#{$bg-img});
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+  }
+
+  @include Flex(column, center, start);
+
+  .home_inner {
+    margin: 3rem;
+
+    .home_title {
+      // The Font mixin takes 4 parameters: family, size, weight, and style.
+      @include Font(null, 4rem, 800, null);
+    }
+
+    .home_description {
+      // The Font mixin takes 4 parameters: family, size, weight, and style.
+      @include Font(null, 2.5rem, 200, null);
+    }
+
+    .home_order_button {
+      $size: 100px;
+
+      border: none {
+        radius: $size - 95;
+      }
+
+      background-color: $color-blck;
+      color: $color-white;
+      width: $size;
+      height: $size - 70;
+       // The Font mixin takes 4 parameters: family, size, weight, and style.
+      @include Font(null, .9em, bold, null);
+      
+      cursor: pointer;
+
+      .home_order_link {
+        color: $color-white;
+        text-decoration: none;
+      }
+    }
+
+    > * {
+      margin: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    .home_inner {
+      min-width: 20em;
+      margin: 0 auto;
+      color: $color-white;
+      background-color: $color-blck;
+      border-radius: 5px;
+
+      .home_title {
+        // The Font mixin takes 4 parameters: family, size, weight, and style.
+        @include Font(null, 1.5rem, 600, null);
+        text-align: center;
+      }
+
+      .home_description {
+        // The Font mixin takes 4 parameters: family, size, weight, and style.
+        @include Font(null, 1.6rem, 100, null);
+        text-align: center;
+      }
+      .try {
+        margin-left: 0;
+
+        width: 100%;
+
+        .home_order_button {
+          background-color: $color-white;
+          display: block;
+          margin: 0 auto;
+
+          .home_order_link {
+            color: $color-blck;
+          }
+        }
+      }
+    }
+  }
+}
