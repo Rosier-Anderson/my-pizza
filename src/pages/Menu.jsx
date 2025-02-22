@@ -11,14 +11,15 @@ const files = importAllImages(
   require.context("../assets/menu", false, /\.(png|jpe?g|svg)$/)
 );
 
-
 export default function Menu() {
   return (
     <div className="menu">
       <h1 className="menu__header">Our Menu</h1>
-      {products(files).map((card, index) => {
-        return <ProductCard {...card} key={index} />;
-      })}
+      <div className="menu__grid">
+        {products(files).map((card, index) => {
+          return <ProductCard {...card} key={index} />;
+        })}
+      </div>
     </div>
   );
 }
@@ -27,15 +28,15 @@ export default function Menu() {
 const products = (files) => {
   // Array of product prices
   const prices = [
-    "15$",
-    "18$",
-    "20$",
-    "$17",
-    "$22",
-    "$19",
-    "$16",
-    "$21",
-    "$23",
+    "15.99$",
+    "18.99$",
+    "20.99$",
+    "$17.99",
+    "$22.99",
+    "$19.99",
+    "$16.99",
+    "$21.99",
+    "$23.99",
   ];
 
   // Array of product names (pizza types)
@@ -44,6 +45,7 @@ const products = (files) => {
     "Pepperoni Pizza",
     "BBQ Chicken Pizza",
     "Veggie Supreme",
+
     "Meat Lovers",
     "Hawaiian Pizza",
     "Cheese Pizza",
@@ -54,12 +56,12 @@ const products = (files) => {
   // Map over the images array, returning an object with id, img, price, and name for each product
   return files.map((image, index) => ({
     id: index, // Unique id for each product
-    img: require(`../assets/menu/${image.src}`),  // Dynamically require images
+    img: require(`../assets/menu/${image.src}`), // Dynamically require images
     price: prices[index], // Price fetched from the prices array
     name: productNames[index], // Product name fetched from the productNames array
   }));
 };
-console.log(products(files))
+console.log(products(files));
 // Component to display individual product card with image, title, and price
 const ProductCard = ({ img, price, name }) => (
   <article className="menu__card">
@@ -69,10 +71,9 @@ const ProductCard = ({ img, price, name }) => (
         <img src={img} className="menu__item__image" alt="This a pizza" />
       </figure>
       {/* Displaying product title (name) */}
-      <p className="menu__item__title">{name}</p>
+      <p className="menu__item__name">{name}</p>
       {/* Displaying product price */}
       <p className="menu__item__price">{price}</p>
     </section>
   </article>
 );
-

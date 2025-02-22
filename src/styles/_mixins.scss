@@ -22,3 +22,13 @@
       font-style: $style;
     }
   }
+// Mixin to set width and height dynamically
+  @mixin size($width: nulll, $height: null){
+    @if $width != null {
+       width: $width;
+    }
+    @if $height != null {
+      height: $height;
+    }
+  
+ };
