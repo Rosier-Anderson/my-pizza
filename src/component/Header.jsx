@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from  "../assets/pizzaLogo.png";
 import '../styles/Header.scss';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
@@ -22,16 +23,16 @@ export default function Header() {
      header_nav_list'>
        <li className='
        header_nav_list_item'>
-         <a href="/" className='header_nav_link'>Home</a>
+         <Link to="/" className='header_nav_link'>Home</Link>
        </li>
        <li className='header_nav_list_item'>
-         <a href="/menu" className='header_nav_link'>Menu</a>
+         <Link to="/menu" className='header_nav_link'>Menu</Link>
        </li>
        <li className='header_nav_list_item'>
-         <a href="/about" className='header_nav_link'>About Us</a>
+         <Link to="/about" className='header_nav_link'>About Us</Link>
        </li>
          <li className='header_nav_list_item'>
-             <a href="/contact" className='header_nav_link'>Contact</a>
+             <Link to="/contact" className='header_nav_link'>Contact</Link>
          </li>
      </ul>
    </nav>

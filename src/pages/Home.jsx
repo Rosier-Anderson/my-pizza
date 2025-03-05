@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Home.scss";
+import { Link } from "react-router-dom";
 function Home() {
   return (
     <>
@@ -9,7 +10,7 @@ function Home() {
           <p className="home_description">PIZZA TO FIT ANY TASTE</p>
           <div className="try">
               <button className="home_order_button">
-            <a href="/menu" className="home_order_link">ORDER</a>
+            <Link to="/menu" className="home_order_link">ORDER</Link>
             </button>
           </div>
         
