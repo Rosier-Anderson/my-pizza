@@ -1,0 +1,15 @@
+.contact{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+   
+    .figure{ 
+        margin: 0;
+        height: inherit;
+        .image__contact{
+          width: 700px;
+          height: inherit;
+
+        }
+    }
+}

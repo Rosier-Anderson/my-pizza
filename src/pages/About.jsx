@@ -17,10 +17,12 @@ export default function About() {
         <div className="text">
           <h1>ABOUT US</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia at
-            consequuntur tempore dolore corporis consequatur architecto pariatur
-            illum fuga aperiam, unde ipsum repellendus vitae molestias sunt,
-            ratione aliquid veniam cum.
+          Welcome to our pizzeria, where passion for authentic flavors meets
+            high-quality ingredients. Our journey began with a simple goal: to
+            create the best handmade pizzas using fresh, locally sourced produce
+            and traditional recipes. Every pizza is crafted with love, from the
+            dough made fresh daily to the rich tomato sauce and perfectly melted
+            cheese.
           </p>
           
         </div>

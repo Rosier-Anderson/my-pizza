@@ -42,9 +42,9 @@ $color-blck: #000;
       color: $color-white;
       width: $size;
       height: $size - 70;
-       // The Font mixin takes 4 parameters: family, size, weight, and style.
+      // The Font mixin takes 4 parameters: family, size, weight, and style.
       @include Font(null, .9em, bold, null);
-      
+
       cursor: pointer;
 
       .home_order_link {
@@ -53,7 +53,7 @@ $color-blck: #000;
       }
     }
 
-    > * {
+    >* {
       margin: 1.5rem;
     }
   }
@@ -79,6 +79,7 @@ $color-blck: #000;
         @include Font(null, 1.6rem, 100, null);
         text-align: center;
       }
+
       .try {
         margin-left: 0;
 

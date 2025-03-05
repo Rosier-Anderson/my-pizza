@@ -3,7 +3,7 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import '../styles/AboutFooter.scss';
+import '../styles/About.scss';
 export default function AboutFooter() {
   return (
     <footer className='footer'>
