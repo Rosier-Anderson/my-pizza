@@ -1,15 +1,70 @@
-.contact{
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-   
-    .figure{ 
+@use "./mixins" as *;
+
+.contact {
+    @include Flex(row, null, null);
+    @include size(null, 100vh);
+
+    .figure {
         margin: 0;
-        height: inherit;
-        .image__contact{
-          width: 700px;
-          height: inherit;
+        @include size(null, inherit);
+
+        .image__contact {
+            @include size(700px, inherit);
+        }
+    }
+
+    .form__contact {
+        @include size(calc(100% - 700px), null);
+        margin: auto 0;
+
+        .form__fieldset {
+            @include Flex(column, null, null);
+            margin: 1rem;
+            gap: 1.5rem;
+            border: none;
+
+            .form__legend {
+                @include Font(null, 2rem, 500, null);
+                margin-bottom: 3rem;
+            }
+
+            .form__label {
+                color: gray;
+                @include Font(null, null, 300, null);
+            }
+
+            .form__input {
+                @include size(null, 2rem);
+                border: none;
+                border-bottom: 1px gray solid;
+                @include Font(null, medium, 700, null);
+                outline-style: none;
+            
+            }
+            .placeHolder::placeholder{
+                color: #000;
+                
+            }       
+
+            .form__textarea {
+                border: none;
+                border-bottom: 1px gray solid;
+                outline-style: none;
+                @include Font(null, large, 700, null);
+                resize: none
+            }
 
         }
+
+        .form__submit {
+            @include size(200px, 50px);
+            background-color: #000;
+            color: white;
+            @include Font(null, 16px, null, null);
+            border: none;
+            cursor: pointer;
+            margin: 2rem;
+        }
+
     }
 }
